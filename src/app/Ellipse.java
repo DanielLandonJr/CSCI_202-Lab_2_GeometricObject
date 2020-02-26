@@ -22,24 +22,12 @@ public class Ellipse extends GeometricObject implements Eccentric, Comparable, C
 	} // end Ellipse constructor
 
 	@Override
-	public double getPerimeter() {
-        
-		return (Math.PI) * (Math.sqrt(2 * (Math.pow(a,2) + Math.pow(b,2) + (a - b) / 2)));
-		
-	} // end getPerimeter
+	public double getPerimeter() { return (Math.PI) * (Math.sqrt(2 * (Math.pow(a,2) + Math.pow(b,2) + (a - b) / 2))); } // end getPerimeter
 	
 	@Override
-	public double getArea() {
-        
-        return(Math.PI * a * b); 
-        
-	} // end getArea
+	public double getArea() { return(Math.PI * a * b); } // end getArea
 
-	
-	public double perimeter()
-	{
-		//method body missing
-
+	public double perimeter() {
 		System.out.println("perimeter");
 
 		return 0;
@@ -57,34 +45,18 @@ public class Ellipse extends GeometricObject implements Eccentric, Comparable, C
 	public double eccentricity() {
         
 		double e = 0.0;
-
 		e = Math.sqrt(a * a + b * b) / a;
-		
 		return e;
 
 	} // end eccentricity
 	
-	public String toString() {
-        
-		return "Ellipse Perimeter: " + getPerimeter() + "\nArea: " + getArea() + "\n";
-		
-	} // end toString
+	public String toString() { return "Ellipse Perimeter: " + getPerimeter() + "\nArea: " + getArea() + "\n"; } // end toString
 
-    /**
-     * Two Ellipse are compared based on the area of Ellipse.
-     *
-     * @param obj: Ellipse being compared to this Ellipse
-     * @return see {@link Comparable#compareTo(java.lang.Object)}
-     */
     @Override
     public int compareTo(Object obj) {
-        if (this.getArea() > ((Ellipse) obj).getArea()) {
-            return 1;
-        } else if (this.getArea() < ((Ellipse) obj).getArea()) {
-            return -1;
-        } else {
-            return 0;
-        }
+		if (this.getArea() > ((Ellipse) obj).getArea()) { return 1; } // end if
+		else if (this.getArea() < ((Ellipse) obj).getArea()) { return -1; } // end else if
+		else { return 0; } // end else
 	} // end compareTo
 	
 	@Override
@@ -100,6 +72,6 @@ public class Ellipse extends GeometricObject implements Eccentric, Comparable, C
             return null;            
         }//catch
         
-	}//clone
+	} // end clone
 	
 } // end Ellipse
