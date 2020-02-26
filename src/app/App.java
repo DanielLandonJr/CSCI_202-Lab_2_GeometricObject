@@ -100,16 +100,61 @@ public class App {
         
         System.out.println("Ellipse ellipse3: " + ellipse3);
 
-        System.out.println("******************** Octagon ********************");
+        System.out.println("\n******************** Octagon ********************\n");        
+        
+        Octagon octagon1 = new Octagon();
+        Octagon octagon2 = new Octagon(3.0);
+        
+        System.out.println("Area of Octagon octagon2 is " 
+            + octagon2.getArea());
+        System.out.println("Perimeter of Octagon octagon2 is " 
+            + octagon2.getPerimeter());
+        
+        if (octagon1.compareTo(octagon2) == 0) { 
+            System.out.println("Octagon ooctagon1 and octagon2 have equal coverage of area"); } // end if
+        else if (octagon1.compareTo(octagon2) > 0) { 
+            System.out.println("Octagon octagon1 has larger area than the Octagon octagon2"); } // end else if
+        else { 
+            System.out.println("Octagon octagon1 has smaller area than the Octagon octagon2"); } // end else
+        
+        Octagon octagon3 = octagon2.clone();
+        if (octagon2.compareTo(octagon3) == 0) { 
+            System.out.println("Octagon octagon2 and octagon3 have equal coverage of area"); } // end if
+        else if (octagon2.compareTo(octagon3) > 0) { 
+            System.out.println("Octagon octagon2 has larger area than the Octagon octagon3"); } // end else if
+        else { 
+            System.out.println("Octagon octagon2 has smaller area than the Octagon octagon3"); } // end else
+        
+        System.out.println("Octagon octagon3: " + octagon3);
 
-        // construct an Octagon
-        // clone an Octagon
-        // Write code to output area and perimeter, and compare Octagon objects o1 and o2.
+        System.out.println("\n******************** Equaleteral Triangle ********************\n");
 
-        // Construct a EquilateralTriangle 
-        // clone an EquilateralTriangle
-        // Write code to output area and perimeter, and compare EquilateralTriangle objects t1 and t2. 	  
+        EquilateralTriangle et1 = new EquilateralTriangle();
+        EquilateralTriangle et2 = new EquilateralTriangle(3.0);
+        
+        System.out.println("Area of Equilateral Triangle et2 is " 
+            + et2.getArea());
+        System.out.println("Perimeter of Equilateral Triangle et2 is " 
+            + et2.getPerimeter());
+        
+        if (et1.compareTo(et2) == 0) { 
+            System.out.println("Equilateral Triangle et1 and et2 have equal coverage of area"); } // end if
+        else if (et1.compareTo(et2) > 0) { 
+            System.out.println("Equilateral Triangle et1 has larger area than the Equilateral Triangle et2"); } // mend else if
+        else { 
+            System.out.println("Equilateral Triangle et1 has smaller area than the Equilateral Triangle et2"); } // end else
+                
+        EquilateralTriangle et3 = et2.clone();
+        
+        if (et2.compareTo(et3) == 0) { 
+            System.out.println("Equilateral Triangle et2 and et3 have equal coverage of area"); } // end if
+        else if (et2.compareTo(et3) > 0) { 
+            System.out.println("Equilateral Triangle et2 has larger area than the Equilateral Triangle et3"); } // end else if
+        else { 
+            System.out.println("Equilateral Triangle et2 has smaller area than the Equilateral Triangle et3"); } // end else
+        
+        System.out.println("Equilateral Triangle et3: " + et3);
 
-    }
+    } // end main
 
 } // end App
