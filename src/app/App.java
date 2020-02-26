@@ -44,43 +44,63 @@ public class App {
      */
     public static void main(String[] args) throws Exception {
 
-        System.out.println("******************** Ellipse ********************");
+        System.out.println("\n******************** Circle ********************\n");
 
         Circle _circleOne = new Circle();
         Circle _circleTwo = new Circle(2.1);
 
-        System.out.println("Area of Circle _circleTwo
-         is " + _circleTwo.getArea());
-        System.out.println("Perimeter of Circle _circleTwo
-         is " + _circleTwo.getPerimeter());
+        System.out.println("Area of Circle _circleTwo is " 
+            + _circleTwo.getArea());
+        System.out.println("Perimeter of Circle _circleTwo is " 
+            + _circleTwo.getPerimeter());
 
-        if (_circleOne.compareTo(_circleTwo) == 0) {
-            System.out.println("Circle _circleOne and _circleTwo
-             have equal coverage of area");
-        } else if (_circleOne.compareTo(_circleTwo) > 0) {
-            System.out.println("Circle _circleOne has larger area than the circle _circleTwo
-            ");
-        } else {
-            System.out.println("Circle _circleOne has smaller area than the circle _circleTwo
-            ");
-        } // end if
+        if (_circleOne.compareTo(_circleTwo) == 0) { 
+            System.out.println("Circle _circleOne and _circleTwo have equal coverage of area"); } // end if
+        else if (_circleOne.compareTo(_circleTwo) > 0) { 
+            System.out.println("Circle _circleOne has larger area than the circle _circleTwo"); } // end else if
+        else { 
+            System.out.println("Circle _circleOne has smaller area than the circle _circleTwo"); } // end else
 
         Circle _circleThree = _circleTwo.clone();
 
         if (_circleTwo.compareTo(_circleThree) == 0) {
-            System.out.println("Circle _circleTwo
-             and _circleThree have equal coverage of area");
-        } else if (_circleTwo.compareTo(_circleThree) > 0) {
-            System.out.println("Circle _circleTwo
-             has larger area than the circle _circleThree");
-        } else {
-            System.out.println("Circle _circleTwo
-             has smaller area than the circle _circleThree");
-        } // end if
+            System.out.println("Circle _circleTwo and _circleThree have equal coverage of area"); } // end if
+        else if (_circleTwo.compareTo(_circleThree) > 0) {
+            System.out.println("Circle _circleTwo has larger area than the circle _circleThree"); } // end else if
+        else { 
+            System.out.println("Circle _circleTwo has smaller area than the circle _circleThree"); } // end else
 
         System.out.println("Circle _circleThree -->" + _circleThree);
 
-        System.out.println("******************** Ellipse ********************");
+        System.out.println("\n******************** Ellipse ********************\n");
+        
+        Ellipse ellipse1 = new Ellipse(2.0,2.0);
+        Ellipse ellipse2 = new Ellipse(3.0, 3.0);
+        
+        System.out.println("Area of Ellipse ellipse2 is " 
+            + ellipse2.getArea());
+        System.out.println("Perimeter of Ellipse ellipse2 is " 
+            + ellipse2.getPerimeter());
+        
+        if (ellipse1.compareTo(ellipse2) == 0) { 
+            System.out.println("Ellipse ellipse1 and ellipse2 have equal coverage of area"); } // end if
+        else if (ellipse1.compareTo(ellipse2) > 0) { 
+            System.out.println("Ellipse ellipse1 has larger area than the circle ellipse2"); } // end else if
+        else { 
+            System.out.println("Ellipse ellipse1 has smaller area than the ellipse ellipse2"); } // end else
+        
+        Ellipse ellipse3 = ellipse2.clone();
+        
+        if (ellipse2.compareTo(ellipse3) == 0) {
+            System.out.println("Ellipse ellipse2 and ellipse3 have equal coverage of area"); } // end if
+        else if (ellipse2.compareTo(ellipse3) > 0) { 
+            System.out.println("Ellipse ellipse2 has larger area than the ellipse ellipse3"); } // end else if
+        else { 
+            System.out.println("Ellipse ellipse2 has smaller area than the ellipse ellipse3"); } // end else
+        
+        System.out.println("Ellipse ellipse3: " + ellipse3);
+
+        System.out.println("******************** Octagon ********************");
 
         // construct an Octagon
         // clone an Octagon
@@ -88,10 +108,8 @@ public class App {
 
         // Construct a EquilateralTriangle 
         // clone an EquilateralTriangle
-        // Write code to output area and perimeter, and compare EquilateralTriangle objects t1 and t2. 	    
-		
-		// construct an Ellipse
-        // clone an Ellipse
-        // Write code to output area, perimeter, and eccentricity, and compare Ellipse objects e1 and e2.
+        // Write code to output area and perimeter, and compare EquilateralTriangle objects t1 and t2. 	  
+
+    }
 
 } // end App

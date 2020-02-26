@@ -1,127 +1,45 @@
 package app;
 
-/**
- * The
- * <code>Circle</code> class implements a Circle and contains several useful
- * class fields and methods. It can be instantiated.
- *
- * @author Suranga Hettiarachchi
- * @since Spring 2013
- */
-public class Circle extends Ellipse implements Comparable, Cloneable {
-
-    /**
-     * radius of this Circle
-     */
-    private double radius;
-
-    /**
-     * default constructor sets radius to 1.0
-     */
+public class Circle extends Ellipse {
+    
+    private double radius = 0.0;
+    
     public Circle() {
         super(1.0, 1.0);
         radius = 1.0;
-    }
-
-    /**
-     * Overloaded constructor, calls super(a,b)
-     *
-     * @param radius: radius of this Circle set by client
-     */
+    } // end Circle constructor
+    
     public Circle(double radius) {
-        super(radius, radius);
+        super(radius,radius);
+        System.out.println("This circle has a radius of: " + radius);
         this.radius = radius;
-    }
+    } // end Circle constructor
+    
+    public double getRadius() { return radius; } // end getRadius
+    
+    public void setRadius(double radius) { this.radius = radius; } // end setRadius
+    
+    public double getArea() { return radius * radius * Math.PI; } // end getArea
+    
+    public double getPerimeter() { return 2 * radius * Math.PI; } // end getPerimeter
 
-	
-    /**
-     * Accessor of radius for this circle
-     *
-     * @return radius of this Circle
-     */
-    public double getRadius() {
-        return radius;
-    }
-
-    /**
-     * Mutator of radius for this circle
-     *
-     * @param radius: set radius of this circle with client specified radius.
-     */
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
-    /**
-     * Implement the getArea method defined in GeometricObject
-     *
-     * @return this Circle's area - pi*rad^2
-     */
-    public double getArea() {
-        return radius * radius * Math.PI;
-    }
-
-    /**
-     * Implement the getPerimeter method defined in GeometricObject
-     *
-     * @return this Circle's perimeter - 2*pi*rad
-     */
-    public double getPerimeter() {
-        return 2 * radius * Math.PI;
-    }
-
-    /**
-     * Overrides the toString() method defined in the Object class.
-     *
-     * @return this Circle's radius is returned as String representation.
-     * <p>Also see {@link Object#toString()}</p>
-     */
     @Override
-    public String toString() {
-        return "[Circle] radius = " + radius;
-    }
-
-    /**
-     * Two Circles are compared based on the area of circles.
-     *
-     * @param obj: circle being compared to this circle
-     * @return see {@link Comparable#compareTo(java.lang.Object)}
-     */
+    public String toString() { return "[Circle] radius = " + radius; } // end toString
+    
     @Override
     public int compareTo(Object obj) {
-        if (this.getArea() > ((Circle) obj).getArea()) {
-            return 1;
-        } else if (this.getArea() < ((Circle) obj).getArea()) {
-            return -1;
-        } else {
-            return 0;
-        }
-    }
-
-    /**
-     * Two Circles are equal if they have the same radius.
-     *
-     * @param obj : circle being compared to this circle
-     * @return true if the two circles have the same radius
-     * <p>Also see {@link Object#equals(java.lang.Object)}</p>
-     */
+        if (this.getArea() > ((Circle) obj).getArea()) { return 1; } 
+        else if (this.getArea() < ((Circle) obj).getArea()) { return -1; }
+        else { return 0; }
+    } // end compareTo
+    
     @Override
-    public boolean equals(Object obj) {
-        return this.radius == ((Circle) obj).radius;
-    }
+    public boolean equals(Object obj) { return this.radius == ((Circle) obj).radius; } // end equals
 
-    /**
-     * Produces a clone of this Circle
-     *
-     * @return cloned object as a Circle
-     * <p>Also see {@link Object#clone()}</p>
-     */
     @Override
-    public Circle clone() { //
-        try {
-            return (Circle) super.clone();
-        } catch (CloneNotSupportedException ex) {
-            return null;
-        }
-    }
+    public Circle clone() {
+        System.out.println("Getting Circle to clone...");
+        
+        return (Circle)super.clone();
+    } // end clone
 }

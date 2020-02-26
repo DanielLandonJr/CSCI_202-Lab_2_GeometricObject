@@ -2,46 +2,32 @@ package app;
 // Complete all methods
 // Add JavaDoc with explanations.
 
+// most code here supplied by instructor
+
 public class Ellipse extends GeometricObject implements Eccentric, Comparable, Cloneable {
 	
 	double a = 0.0;
 	double b = 0.0;
 
-	/**
-	 * 
-	 * @param s1
-	 * @param s2
-	 */
 	public Ellipse(double s1, double s2) {
-		if(s1 < s2) {
-			
+		if(s1 < s2) {			
 			a = s2;
 			b = s1;
-
 		}
-
-		else {
-		
+		else {		
 			a = s1;
 			b = s2;
-
 		}
 
 	} // end Ellipse constructor
 
-	/**
-	 * 
-	 */
 	@Override
 	public double getPerimeter() {
         
 		return (Math.PI) * (Math.sqrt(2 * (Math.pow(a,2) + Math.pow(b,2) + (a - b) / 2)));
 		
 	} // end getPerimeter
-
-	/**
-	 * 
-	 */
+	
 	@Override
 	public double getArea() {
         
@@ -57,7 +43,7 @@ public class Ellipse extends GeometricObject implements Eccentric, Comparable, C
 		System.out.println("perimeter");
 
 		return 0;
-	}
+	} // end perimeter
 	
 	public double area()
 	{
@@ -66,25 +52,24 @@ public class Ellipse extends GeometricObject implements Eccentric, Comparable, C
 		System.out.println("area");
 
 		return 0;		
-	}
+	} // end area
 	
-	public double eccentricity()
-	{
-		//method body missing	
+	public double eccentricity() {
+        
+		double e = 0.0;
 
-		System.out.println("eccentricity");
+		e = Math.sqrt(a * a + b * b) / a;
+		
+		return e;
 
-		return 0;			
-	}
+	} // end eccentricity
 	
-	public String toString()
-	{
-		//method body missing
+	public String toString() {
+        
+		return "Ellipse Perimeter: " + getPerimeter() + "\nArea: " + getArea() + "\n";
+		
+	} // end toString
 
-		System.out.println("toString");
-
-		return "0";			
-	}
     /**
      * Two Ellipse are compared based on the area of Ellipse.
      *
@@ -100,5 +85,21 @@ public class Ellipse extends GeometricObject implements Eccentric, Comparable, C
         } else {
             return 0;
         }
-    }
-}
+	} // end compareTo
+	
+	@Override
+    public Ellipse clone(){
+        try{
+            System.out.print("Getting Ellipse to clone...");
+            
+            return(Ellipse) super.clone();            
+        }//try
+        catch(Exception e){            
+			System.out.println("UH-OH in Ellipse");
+			
+            return null;            
+        }//catch
+        
+	}//clone
+	
+} // end Ellipse
